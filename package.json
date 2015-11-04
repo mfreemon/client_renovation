@@ -4,7 +4,6 @@
   "description": "client home renovation site",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --progress --colors",
     "build": "webpack --progress --colors"
   },

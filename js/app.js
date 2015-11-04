@@ -1,27 +1,29 @@
 import React from 'react';
 import Router from 'react-router';
-import {DefaultRoute, Link, Route, RouteHandler} from 'react-router';
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
 import LoginHandler from './components/Login.js';
 
-let App=React.createClass({
-  render(){
-    return(
-      <nav>
+let App = React.createClass({
+  render() {
+    return (
+      <div>
         <Link to="app">Home</Link>
-        <Link to="app">Login</Link>
-        <RouteHander/>
-      </nav>
-    );
+        <Link to="login">Login</Link>
+
+        {/* this is the importTant part */}
+        <RouteHandler/>
+      </div>
+
   }
 });
 
 let routes = (
   <Route name="app" path="/" handler={App}>
-    <Route name ="login" path="/login" hander={LoginHandler}/>
+    <Route name="login" path="/login" handler={LoginHandler}/>
   </Route>
 );
 
-Router.run(routes, function(Handler){
+Router.run(routes, function (Handler) {
   React.render(<Handler/>, document.body);
-})
+});
