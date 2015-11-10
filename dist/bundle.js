@@ -18919,7 +18919,6 @@ module.exports = require('./lib/React');
 "use strict";
 
 /** @jsx React.DOM */
-
 var React = require("react");
 
 var App = React.createClass({
@@ -18928,7 +18927,7 @@ var App = React.createClass({
     return React.createElement(
       "h1",
       null,
-      "Hello World I am working"
+      "I am here"
     );
   }
 });

@@ -1,10 +1,9 @@
 /** @jsx React.DOM */
-
 var React = require("react");
 
 var App = React.createClass({
   render(){
-    return <h1>Hello World I am working</h1>;
+    return <h1>I am here</h1>
   }
 })
 
