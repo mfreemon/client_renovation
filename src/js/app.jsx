@@ -1,10 +1,9 @@
 /** @jsx React.DOM */
-var React = require("react");
+import React from 'react';
+import Router from 'react-router';
+import routes from '../routes/route';
 
-var App = React.createClass({
-  render(){
-    return <h1>I am here</h1>
-  }
-})
 
-React.render(<App/>, document.getElementById('example'));
+Router.run(routes, Router.HistoryLocation, (Handler)=> {
+  React.render(<Handler/>, document.getElementById('example'));
+});
