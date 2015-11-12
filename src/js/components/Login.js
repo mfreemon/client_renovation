@@ -4,8 +4,8 @@ import React from 'react';
 let Login = React.createClass({
 
   render() {
-    return(<div>Welcome to login</div>);
+    return<h1>I am here: Login</h1>;
   }
 });
 
-export default Login; 
+export default Login;
