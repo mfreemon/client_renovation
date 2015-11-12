@@ -23363,7 +23363,7 @@ var React = _interopRequire(require("react"));
 var render = require("react-dom").render;
 
 
-// First we import some components...
+// Import components...
 var _reactRouter = require("react-router");
 
 var Router = _reactRouter.Router;
@@ -23373,10 +23373,6 @@ var Login = _interopRequire(require("./components/Login"));
 
 var Contact = _interopRequire(require("./components/Contact"));
 
-
-
-
-// Then we delete a bunch of code from App and
 // add some <Link> elements...
 var App = React.createClass({
   displayName: "App",
@@ -23406,8 +23402,8 @@ var App = React.createClass({
           null,
           React.createElement(
             Link,
-            { to: "/inbox" },
-            "Inbox"
+            { to: "/contact" },
+            "Contact"
           )
         )
       ),
@@ -23425,7 +23421,7 @@ render(React.createElement(
     Route,
     { path: "/", component: App },
     React.createElement(Route, { path: "about", component: Login }),
-    React.createElement(Route, { path: "inbox", component: Contact })
+    React.createElement(Route, { path: "contact", component: Contact })
   )
 ), document.getElementById("example"));
 /* change the <a>s to <Link>s */ /*
