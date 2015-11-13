@@ -4,26 +4,30 @@ import { render } from 'react-dom'
 
 // Import components...
 import { Router, Route, Link } from 'react-router'
-import Login from './components/Login';
+import About from './components/About';
 import Contact from './components/Contact';
+import Services from './components/Services';
 
 // add some <Link> elements...
 const App = React.createClass({
   render() {
     return (
       <div>
-        <h1>This the app</h1>
-        {/* change the <a>s to <Link>s */}
-        <ul>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-        </ul>
-
+        <div className="header">
+          {/* change the <a>s to <Link>s */}
+          <ul className="navigation">
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </div>
         {/*
           next we replace `<Child>` with `this.props.children`
           the router will figure out the children for us
         */}
-        {this.props.children}
+        <div className="content">
+          {this.props.children}
+        </div>
       </div>
     );
   }
@@ -34,8 +38,9 @@ const App = React.createClass({
 render((
   <Router>
     <Route path="/" component={App}>
-      <Route path="about" component={Login}/>
+      <Route path="services" component={Services}/>
+      <Route path="about" component={About}/>
       <Route path="contact" component={Contact}/>
     </Route>
   </Router>
-), document.getElementById('example'));
+), document.getElementById('container'));
