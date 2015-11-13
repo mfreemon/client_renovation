@@ -3,10 +3,13 @@ import React from 'react'
 import { render } from 'react-dom'
 
 // Import components...
-import { Router, Route, Link } from 'react-router'
+import {Router, Route, Link} from 'react-router'
+import {IndexRoute} from 'react-router';
 import About from './components/About';
 import Contact from './components/Contact';
 import Services from './components/Services';
+import Home from './components/Home';
+
 
 // add some <Link> elements...
 const App = React.createClass({
@@ -38,6 +41,7 @@ const App = React.createClass({
 render((
   <Router>
     <Route path="/" component={App}>
+      <IndexRoute component={Home}/>
       <Route path="services" component={Services}/>
       <Route path="about" component={About}/>
       <Route path="contact" component={Contact}/>
